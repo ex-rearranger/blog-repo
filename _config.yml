@@ -3,18 +3,26 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Hello Neuranger!
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
-timezone: ''
+  - blog
+  - machine learning
+  - deep learning
+author: extreme-rearranger
+language: 
+  - ko
+  - en
+timezone: 'Asia/Seoul'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
+url: https://extreme-rearranger.github.io/
+# permalink: :year/:month/:day/:title/
+permalink: posts/:title/
+abbrlink:
+  start: 1000 # the first id, default 0
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -32,7 +40,7 @@ skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
-default_layout: post
+default_layout: draft
 titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
@@ -49,7 +57,7 @@ highlight:
   auto_detect: false
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
 prismjs:
   preprocess: true
   line_number: true
@@ -67,6 +75,9 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  # category_map example
+  # "yesterday's thoughts": yesterdays-thoughts
+  # "C++": c-plus-plus
 tag_map:
 
 # Metadata elements
@@ -77,7 +88,7 @@ meta_generator: true
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
+date_format: YY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
 updated_option: 'mtime'
@@ -96,9 +107,41 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:extreme-rearranger/extreme-rearranger.github.io.git
+  branch: main
+
+
+markdown:
+  plugins:
+    - '@renbaoshuo/markdown-it-katex'
+    # - markdown-it-abbr
+    # - markdown-it-container
+    # - markdown-it-deflist
+    # - markdown-it-footnote
+    # - markdown-it-ins
+    # - markdown-it-mark
+    # - markdown-it-sub
+    # - markdown-it-sup
+
+
+# tag-plugins-plus
+# see https://akilar.top/posts/615e2dec/
+tag_plugins:
+  enable: true # 활성화
+  priority: 5 # 필터 우선 순위
+  issues: false # issues 라벨 활성화
+  link:
+    placeholder: /img/no-image.png #link_card 라벨의 기본 이미지
+  CDN:
+    anima: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
+    jquery: https://npm.elemecdn.com/jquery@1.0.17/dist/jquery.min.js #issues标签依赖
+    issues: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/issues.js #issues标签依赖
+    iconfont: //at.alicdn.com/t/font_2032782_8d5kxvn09md.js #参看https://akilar.top/posts/d2ebecef/
+    carousel: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/carousel-touch.js
+    tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/tag_plugins.css
