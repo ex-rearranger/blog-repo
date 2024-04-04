@@ -128,6 +128,18 @@ markdown:
     # - markdown-it-mark
     # - markdown-it-sub
     # - markdown-it-sup
+  render:
+    linkify: true
+    html: true
+  anchors:
+    level: 1 # Minimum level for ID creation. (Ex. h2 to h6)
+    collisionSuffix: '+' # A suffix that is prepended to the number given if the ID is repeated
+    permalink: false # If `true`, creates an anchor tag with a permalink besides the heading
+    permalinkClass: header-anchor # Class used for the permalink anchor tag
+    permalinkSide: 'left'
+    permalinkSymbol: '¶' # The symbol used to make the permalink
+    case: 0 # 0: no change, 1: lowercase, 2: uppercase
+    separator: '-' # Separator used to replace whitespace
 
 
 # tag-plugins-plus
