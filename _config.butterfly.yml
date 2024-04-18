@@ -2,6 +2,9 @@
 # see https://butterfly.js.org/posts/4aa8abbe/##導航欄設置-Navigation-bar-settings
 # --------------------------------------
 
+# additional config
+full_date_format: 'YYYY-MM-DD HH:MM:SS'
+
 nav:
   logo: /img/thumb-extreme-rearranger.png # image
   display_title: true
