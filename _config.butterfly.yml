@@ -12,11 +12,14 @@ nav:
 
 # Menu
 menu:
-  Tags: /tags/ || fas fa-tags
-  Categories: /categories/ || fas fa-folder-open
+  Tags: /tags/ || fas fa-tags || url_for_lang
+  Categories: /categories/ || fas fa-folder-open || url_for_lang
+  Language||fas fa-language:
+    English: /en/ || fas fa-font || url_for
+    Korean: /ko/ || fas fa-a || url_for
   Others||fas fa-list:
-    Archives: /archives/ || fas fa-archive
-    About: /about/ || fas fa-heart
+    Archives: /archives/ || fas fa-archive || url_for_lang
+    About: /about/ || fas fa-heart || url_for
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -56,11 +59,11 @@ index_img: false
 default_top_img: false
 
 # The banner image of archive page
-archive_img: false
+archive_img: 
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img: false
+tag_img: /img/galaxy-3219390-2.jpg
 
 # The banner image of tag page
 # format:
@@ -69,7 +72,7 @@ tag_per_img:
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img: false
+category_img: /img/galaxy-3219390-2.jpg
 
 # The banner image of category page
 # format:
@@ -126,7 +129,7 @@ index_post_content:
 # anchor
 anchor:
   # when you scroll, the URL will update according to header id.
-  auto_update: false
+  auto_update: true
   # Click the headline to scroll and update the anchor
   click_to_scroll: true
 
@@ -191,7 +194,7 @@ related_post:
 # 1: The 'next post' will link to old post
 # 2: The 'next post' will link to new post
 # false: disable pagination
-post_pagination: false
+post_pagination: 2
 
 # Displays outdated notice for a post (文章過期提醒)
 noticeOutdate:
@@ -226,7 +229,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description:
+    description: "⊂(▀¯▀⊂) (づ▀¯▀)づ ⊂(▀¯▀⊂)"
     button:
       enable: false
       icon: fab fa-github
@@ -271,7 +274,7 @@ aside:
     sort_order: # Don't modify the setting unless you know how it works
   card_post_series:
     enable: true
-    series_title: false # The title shows the series name
+    series_title: true # The title shows the series name
     orderBy: 'date' # Order by title or date
     order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
 
@@ -338,8 +341,8 @@ rightside_scroll_percent: true
 # Don't repeat 不要重複
 rightside_item_order:
   enable: true
-  hide: 
-  show: readmode,darkmode,hideAside,toc
+  hide: translate,darkmode,langmode
+  show: readmode,hideAside,toc
 
 # Math (數學)
 # --------------------------------------
@@ -373,7 +376,7 @@ algolia_search:
 local_search:
   enable: false
   # Preload the search data when the page loads.
-  preload: false
+  preload: true
   # Show top n results per article, show all results by setting to -1
   top_n_per_article: 1
   # Unescape html strings to the readable one.
@@ -808,8 +811,8 @@ fancybox: true
 series:
   enable: true
   orderBy: 'date' # Order by title or date
-  order: 1 # Sort of order. 1, asc for ascending; -1, desc for descending
-  number: false
+  order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
+  number: true
 
 # abcjs (악보생성)
 # See https://github.com/paulrosen/abcjs
