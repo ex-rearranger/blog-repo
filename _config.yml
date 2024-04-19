@@ -12,18 +12,15 @@ keywords:
   - deep learning
 author: extreme-rearranger
 language: 
-  - ko
+  - default # default language should be explicitly defined as first element
   - en
+  - ko
 timezone: 'Asia/Seoul'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://extreme-rearranger.github.io/
-# permalink: :year/:month/:day/:title/
 permalink: posts/:title/
-abbrlink:
-  start: 1000 # the first id, default 0
-permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
@@ -36,6 +33,19 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
+i18n: # hexo-generator-i18n settings
+  languages: # important!!!! `default` should be explicitly defined as first element
+    - default
+    - en
+    - ko
+  type:
+    # - page  # if active, then about, ko/about, en/about are all available
+    # - post  # if active, then posts/:title, en/posts/:title, ko/posts/:title are all avaliable
+  generator:
+    - archive
+    - category
+    - tag
+    - index
 skip_render:
 
 # Writing
@@ -53,11 +63,12 @@ relative_link: false
 future: true
 syntax_highlighter: highlight.js
 highlight:
-  line_number: true
   auto_detect: false
-  tab_replace: ''
+  line_number: true
+  line_threshold: 0
+  tab_replace: '  '
   wrap: true
-  hljs: true
+  hljs: false
 prismjs:
   preprocess: true
   line_number: true
