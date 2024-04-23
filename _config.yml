@@ -19,7 +19,7 @@ timezone: 'Asia/Seoul'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://extreme-rearranger.github.io/
+url: https://ex-rearranger.github.io/
 permalink: posts/:title/
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -42,9 +42,9 @@ i18n: # hexo-generator-i18n settings
     # - page  # if active, then about, ko/about, en/about are all available
     # - post  # if active, then posts/:title, en/posts/:title, ko/posts/:title are all avaliable
   generator:
-    - archive
-    - category
-    - tag
+    # - archive
+    # - category
+    - tag  # idk why, but this is necessary for ko/index.html & en/index.html to be generated
     - index
 skip_render:
 
@@ -124,7 +124,7 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:extreme-rearranger/extreme-rearranger.github.io.git
+  repo: git@github.com:ex-rearranger/ex-rearranger.github.io.git
   branch: main
 
 
@@ -167,4 +167,4 @@ tag_plugins:
     issues: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/issues.js #issues标签依赖
     iconfont: //at.alicdn.com/t/font_2032782_8d5kxvn09md.js #参看https://akilar.top/posts/d2ebecef/
     carousel: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/carousel-touch.js
-    tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/tag_plugins.css
+    tag_plugins_css: /css/tag_plugins_custom@1.0.17.css
