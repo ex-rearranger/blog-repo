@@ -28,6 +28,7 @@
     "hexo-server": "^3.0.0",
     "hexo-wordcount": "^6.0.1",
     "katex": "^0.16.10",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "hexo-generator-searchdb-custom": "themes/butterfly/source/js/custom/hexo-generator-searchdb-custom"
   }
 }
