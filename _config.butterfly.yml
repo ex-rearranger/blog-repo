@@ -6,7 +6,7 @@
 full_date_format: 'YYYY-MM-DD HH:MM:SS'
 
 nav:
-  logo: /img/thumb-extreme-rearranger.png # image
+  logo: /img/thumb-extreme-rearranger.webp # image
   display_title: true
   fixed: false # fixed navigation bar
 
@@ -46,7 +46,7 @@ favicon: /img/favicon-extreme-rearranger.ico
 
 # Avatar (頭像)
 avatar:
-  img: /img/thumb-extreme-rearranger.png
+  img: /img/thumb-extreme-rearranger.webp
   effect: false
 
 # Disable all banner image
@@ -63,7 +63,7 @@ archive_img:
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img: /img/galaxy-3219390-2.jpg
+tag_img: /img/galaxy-3219390-2.webp
 
 # The banner image of tag page
 # format:
@@ -72,7 +72,7 @@ tag_per_img:
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img: /img/galaxy-3219390-2.jpg
+category_img: /img/galaxy-3219390-2.webp
 
 # The banner image of category page
 # format:
@@ -89,8 +89,8 @@ cover:
   position: right
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - /img/galaxy-3219390-2.jpg
-  default_cover_aside: /img/no-image.png
+    - /img/galaxy-3219390-2.webp
+  default_cover_aside: /img/no-image.webp
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
