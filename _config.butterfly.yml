@@ -86,7 +86,7 @@ cover:
   archives_enable: true
   # the position of cover in home page (封面顯示的位置)
   # left/right/both
-  position: right
+  position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
     - /img/galaxy-3219390-2.webp
@@ -276,7 +276,7 @@ aside:
     enable: true
     series_title: true # The title shows the series name
     orderBy: 'date' # Order by title or date
-    order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
+    order: 1 # Sort of order. 1, asc for ascending; -1, desc for descending
 
 # busuanzi count for PV / UV in site
 # 訪問人數
@@ -403,7 +403,7 @@ sharejs:
 # AddToAny
 # https://www.addtoany.com/
 addtoany:
-  enable: true
+  enable: false
   item: copy_link,email,print
   # item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
 
@@ -967,7 +967,7 @@ CDN:
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
   # option: local/jsdelivr/unpkg/cdnjs/custom
   # when set it to local, you need to install hexo-butterfly-extjs
-  third_party_provider: jsdelivr
+  third_party_provider: cdnjs
 
   # Add version number to url, true or false
   version: true
