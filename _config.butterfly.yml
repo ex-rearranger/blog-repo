@@ -95,13 +95,12 @@ cover:
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
   flink: /img/gif2apng-friend_404.png
-  post_page: /img/404.jpg
-
+  post_page: /img/image-not-found.webp
 # A simple 404 page
 error_404:
   enable: true
   subtitle: 'Page Not Found'
-  background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
+  background: img/404.svg
 
 post_meta:
   page: # Home Page
@@ -900,13 +899,13 @@ lazyload:
 # PWA
 # See https://github.com/JLHwung/hexo-offline
 # ---------------
-# pwa:
-#   enable: false
-#   manifest: /pwa/manifest.json
-#   apple_touch_icon: /pwa/apple-touch-icon.png
-#   favicon_32_32: /pwa/32.png
-#   favicon_16_16: /pwa/16.png
-#   mask_icon: /pwa/safari-pinned-tab.svg
+pwa:
+  enable: true
+  manifest: /img/favicon_io/manifest.json
+  apple_touch_icon: /img/favicon_io/apple-touch-icon.png
+  favicon_32_32: /img/favicon_io/favicon-32x32.png
+  favicon_16_16: /img/favicon_io/favicon-16x16.png
+  mask_icon: /img/favicon-extreme-rearranger.svg
 
 # Open graph meta tags
 # https://developers.facebook.com/docs/sharing/webmasters/
@@ -932,26 +931,6 @@ inject:
     - <link rel="stylesheet" href="/css/layer@0.0.1.css">
     - <link rel="stylesheet" href="/css/print@0.0.1.css">
     - <link rel="stylesheet" href="/css/post@0.0.1.css">
-    - <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon_io/apple-touch-icon.png">
-    - <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_io/favicon-32x32.png">
-    - <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_io/favicon-16x16.png">
-    - <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon_io/apple-icon-57x57.png">
-      <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon_io/apple-icon-60x60.png">
-      <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon_io/apple-icon-72x72.png">
-      <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon_io/apple-icon-76x76.png">
-      <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon_io/apple-icon-114x114.png">
-      <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon_io/apple-icon-120x120.png">
-      <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon_io/apple-icon-144x144.png">
-      <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon_io/apple-icon-152x152.png">
-      <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon_io/apple-icon-180x180.png">
-      <link rel="icon" type="image/png" sizes="192x192"  href="/img/favicon_io/android-icon-192x192.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_io/favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon_io/favicon-96x96.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_io/favicon-16x16.png">
-      <link rel="manifest" href="/img/favicon_io/manifest.json">
-      <meta name="msapplication-TileColor" content="#ffffff">
-      <meta name="msapplication-TileImage" content="/img/favicon_io/ms-icon-144x144.png">
-      <meta name="theme-color" content="#ffffff">
   bottom:
     # - <script src="xxxx"></script>
 
