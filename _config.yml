@@ -5,12 +5,13 @@
 # Site
 title: Hello Neuranger!
 subtitle: ''
-description: ''
+description: 'Machine Learning Blog written in Korean and English'
 keywords:
   - blog
   - machine learning
   - deep learning
 author: extreme-rearranger
+copyright: 'All content is licensed under a CC BY-SA 4.0 License unless otherwise specified.'
 language: 
   - default # default language should be explicitly defined as first element
   - en
