@@ -41,11 +41,11 @@ i18n: # hexo-generator-i18n settings
   type:
     # - page  # if active, then about, ko/about, en/about are all available
     # - post  # if active, then posts/:title, en/posts/:title, ko/posts/:title are all avaliable
-  generator:
+  generator:  # all inactive since every helpers is defined in 10_i18n.js
     # - archive
     # - category
-    - tag  # idk why, but this is necessary for ko/index.html & en/index.html to be generated
-    - index
+    # - tag
+    # - index
 skip_render:
 
 # Writing
