@@ -2,3 +2,6 @@
 	path = themes/butterfly
 	url = https://github.com/ex-rearranger/hexo-theme-butterfly.git
 	branch = own-blog
+[submodule "source"]
+	path = source
+	url = git@github.com:ex-rearranger/blog-source.git
