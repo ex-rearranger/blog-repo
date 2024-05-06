@@ -13,9 +13,10 @@ keywords:
 author: extreme-rearranger
 copyright: 'All content is licensed under a CC BY-SA 4.0 License unless otherwise specified.'
 language: 
-  - default # default language should be explicitly defined as first element
+  - default
   - en
   - ko
+language_default: default
 timezone: 'Asia/Seoul'
 
 # URL
@@ -35,10 +36,6 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 i18n: # hexo-generator-i18n settings
-  languages: # important!!!! `default` should be explicitly defined as first element
-    - default
-    - en
-    - ko
   type:
     # - page  # if active, then about, ko/about, en/about are all available
     # - post  # if active, then posts/:title, en/posts/:title, ko/posts/:title are all avaliable
