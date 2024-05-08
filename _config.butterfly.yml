@@ -659,7 +659,8 @@ text_align_justify: true
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: "#fbfcfc"
+# Changed to true & false (the color will be set in custom css)
+background: true
 
 # Footer Background
 footer_bg: false
@@ -928,6 +929,8 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
+    - <link rel="stylesheet" href="/css/color@0.0.1.css">
+    - <link rel="stylesheet" href="/css/color_sub@0.0.1.css">
     - <link rel="stylesheet" href="/css/layer@0.0.1.css">
     - <link rel="stylesheet" href="/css/print@0.0.1.css">
     - <link rel="stylesheet" href="/css/post@0.0.1.css">
