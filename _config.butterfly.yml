@@ -756,7 +756,7 @@ font:
 # Font settings for the site title and site subtitle
 # 左上角網站名字 主頁居中網站名字
 blog_title_font:
-  font_link: "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap"
+  font_link: /third-party/roboto-mono.css
   font-family: 'Roboto Mono'
 
 # The setting of divider icon (水平分隔線圖標設置)
@@ -791,7 +791,7 @@ preloader:
   # 2. pace (progress bar)
   source: 2
   # pace theme (see https://codebyzach.github.io/pace/)
-  pace_css_url: /css/pace_minimal@0.0.1.css
+  pace_css_url: /third-party/pace_minimal@0.0.1.css
 
 # wordcount (字數統計)
 # see https://butterfly.js.org/posts/ceeb73f/#字數統計
@@ -949,7 +949,7 @@ CDN:
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
   # option: local/jsdelivr/unpkg/cdnjs/custom
   # when set it to local, you need to install hexo-butterfly-extjs
-  third_party_provider: cdnjs
+  third_party_provider: jsdelivr
 
   # Add version number to url, true or false
   version: true
@@ -972,19 +972,19 @@ CDN:
     # canvas_fluttering_ribbon:
     # canvas_nest:
     # canvas_ribbon:
-    # click_heart:
+    click_heart: /third-party/click-heart.js
     # clickShowText:
     # disqusjs:
     # disqusjs_css:
     # docsearch_css:
     # docsearch_js:
-    # egjs_infinitegrid:
-    # fancybox:
-    # fancybox_css:
+    egjs_infinitegrid: https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js
+    fancybox: /third-party/fancybox-umd@5.0.36.js
+    fancybox_css: /third-party/fancybox@5.0.36.css
     # fireworks:
-    # fontawesome:
-    # gitalk:
-    # gitalk_css:
+    fontawesome: /third-party/font-awesome@6.5.2.css
+    gitalk: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
+    gitalk_css: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
     # giscus:
     # instantpage:
     # instantsearch:
@@ -998,6 +998,7 @@ CDN:
     # medium_zoom:
     # mermaid:
     # meting_js:
+    pace_js: /third-party/pace@1.2.4.js
     # pangu:
     # prismjs_autoloader:
     # prismjs_js:
@@ -1005,8 +1006,8 @@ CDN:
     # pjax:
     # sharejs:
     # sharejs_css:
-    # snackbar:
-    # snackbar_css:
+    snackbar: /third-party/node-snackbar@0.1.16.js
+    snackbar_css: /third-party/node-snackbar@0.1.16.css
     # translate:
     # twikoo:
     # typed:

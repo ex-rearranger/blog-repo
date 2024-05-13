@@ -45,6 +45,10 @@ i18n: # hexo-generator-i18n settings
     # - tag
     # - index
 skip_render:
+  - README.md
+  - css/*
+  - third-party/*
+  - img/*
 
 # Writing
 new_post_name: :title.md # File name of new posts
