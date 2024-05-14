@@ -6,7 +6,9 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo clean \n hexo server"
+    "server": "hexo clean \n hexo server",
+    "build:iconfont": "node ./img_etc/webfont-generation.js",
+    "build:fontagon": "node ./img_etc/fontagon-generation.js"
   },
   "hexo": {
     "version": "7.2.0"
@@ -30,5 +32,8 @@
     "hexo-wordcount": "^6.0.1",
     "katex": "^0.16.10",
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "fontagon": "^1.1.1"
   }
 }
