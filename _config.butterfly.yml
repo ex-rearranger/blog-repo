@@ -14,9 +14,9 @@ nav:
 menu:
   Tags: /tags/ || fas fa-tags || url_for_lang
   Categories: /categories/ || fas fa-folder-open || url_for_lang
-  Language||fas fa-language:
-    English: /en/ || fas fa-font || url_for
-    Korean: /ko/ || fas fa-a || url_for
+  Language||fontagon-icons ft-icons ft-icon-language-box:
+    English: /en/ || fontagon-icons ft-icons ft-icon-eng-box || url_for
+    Korean: /ko/ || fontagon-icons ft-icons ft-icon-kor-box || url_for
   Others||fas fa-list:
     Archives: /archives/ || fas fa-archive || url_for_lang
     About: /about/ || fas fa-heart || url_for
@@ -934,6 +934,7 @@ inject:
     - <link rel="stylesheet" href="/css/layer@0.0.1.css">
     - <link rel="stylesheet" href="/css/print@0.0.1.css">
     - <link rel="stylesheet" href="/css/post@0.0.1.css">
+    - <link rel="stylesheet" href="/css/fontagon-icons.css">
   bottom:
     # - <script src="xxxx"></script>
 
