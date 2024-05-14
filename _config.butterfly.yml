@@ -6,7 +6,7 @@
 full_date_format: 'YYYY-MM-DD HH:MM:SS'
 
 nav:
-  logo: /img/thumb-extreme-rearranger.webp # image
+  logo: /img/avatar-extreme-rearranger.webp # image
   display_title: true
   fixed: false # fixed navigation bar
 
@@ -19,6 +19,7 @@ menu:
     Korean: /ko/ || fontagon-icons ft-icons ft-icon-kor-box || url_for
   Others||fas fa-list:
     Archives: /archives/ || fas fa-archive || url_for_lang
+    # Random: /random/ || fas fa-random || url_for_lang
     About: /about/ || fas fa-heart || url_for
 
 # Code Blocks (代碼相關)
@@ -983,7 +984,7 @@ CDN:
     fancybox: /third-party/fancybox-umd@5.0.36.js
     fancybox_css: /third-party/fancybox@5.0.36.css
     # fireworks:
-    fontawesome: /third-party/font-awesome@6.5.2.css
+    fontawesome: /third-party/font-awesome-custom@6.5.2.css
     gitalk: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
     gitalk_css: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
     # giscus:

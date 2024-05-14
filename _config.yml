@@ -158,7 +158,7 @@ markdown:
 # tag-plugins-plus
 # see https://akilar.top/posts/615e2dec/
 tag_plugins:
-  enable: true # 활성화
+  enable: false # 활성화
   priority: 5 # 필터 우선 순위
   issues: false # issues 라벨 활성화
   link:
