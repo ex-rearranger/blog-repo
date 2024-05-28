@@ -341,7 +341,7 @@ rightside_scroll_percent: true
 # Don't repeat 不要重複
 rightside_item_order:
   enable: true
-  hide: translate,darkmode,langmode,readmode
+  hide: langmode,darkmode,readmode
   show: hideAside,toc
 
 # Math (數學)
