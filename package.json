@@ -7,7 +7,6 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo clean \n hexo server",
-    "build:iconfont": "node ./img_etc/webfont-generation.js",
     "build:fontagon": "node ./img_etc/fontagon-generation.js"
   },
   "hexo": {
@@ -16,7 +15,7 @@
   "dependencies": {
     "@renbaoshuo/markdown-it-katex": "^2.0.2",
     "hexo": "^7.2.0",
-    "hexo-butterfly-tag-plugins-plus": "^1.0.17",
+    "hexo-butterfly-tag-plugins-plus": "^1.0.18",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",

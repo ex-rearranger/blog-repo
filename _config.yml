@@ -164,11 +164,12 @@ tag_plugins:
   link:
     placeholder: /img/no-image.png #link_card 라벨의 기본 이미지
   CDN:
-    anima: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
-    jquery: https://npm.elemecdn.com/jquery@1.0.17/dist/jquery.min.js #issues标签依赖
-    issues: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/issues.js #issues标签依赖
-    # iconfont: //at.alicdn.com/t/font_2032782_8d5kxvn09md.js #参看https://akilar.top/posts/d2ebecef/
-    carousel: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/carousel-touch.js
+    anima: https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
+    jquery: https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js #issues标签依赖
+    issues: https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
+    iconfont: //at.alicdn.com/t/font_2032782_8d5kxvn09md.js #参看https://akilar.top/posts/d2ebecef/
+    carousel: https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
+    ghcard_url: https://github-readme-stats.vercel.app #API仓库https://github.com/anuraghazra/github-readme-stats
     tag_plugins_css: /css/tag_plugins_custom@1.0.17.css
 
 # Search DB Generator Settings
