@@ -153,7 +153,7 @@ toc:
   page: false
   number: false
   expand: false
-  style_simple: false # for post
+  style_simple: true # for post
   scroll_percent: false
 
 post_copyright:

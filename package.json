@@ -6,7 +6,7 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo clean \n hexo server",
+    "server": "hexo clean \n hexo server --draft",
     "build:fontagon": "node ./img_etc/fontagon-generation.js"
   },
   "hexo": {

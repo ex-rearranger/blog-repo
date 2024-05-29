@@ -133,14 +133,14 @@ deploy:
 markdown:
   plugins:
     - '@renbaoshuo/markdown-it-katex'
-    # - markdown-it-abbr
-    # - markdown-it-container
-    # - markdown-it-deflist
-    # - markdown-it-footnote
-    # - markdown-it-ins
-    # - markdown-it-mark
-    # - markdown-it-sub
-    # - markdown-it-sup
+    - markdown-it-sub
+    - markdown-it-sup
+    - markdown-it-ins
+    - markdown-it-emoji
+    - markdown-it-deflist
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-mark
   render:
     linkify: true
     html: true
