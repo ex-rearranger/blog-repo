@@ -10,7 +10,7 @@
     "build:fontagon": "node ./img_etc/fontagon-generation.js"
   },
   "hexo": {
-    "version": "7.2.0"
+    "version": "7.3.0"
   },
   "dependencies": {
     "@renbaoshuo/markdown-it-katex": "^2.0.2",
