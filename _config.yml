@@ -39,7 +39,7 @@ i18n: # hexo-generator-i18n settings
   type:
     # - page  # if active, then about, ko/about, en/about are all available
     # - post  # if active, then posts/:title, en/posts/:title, ko/posts/:title are all avaliable
-  generator:  # all inactive since every helpers is defined in 10_i18n.js
+  generator:  # all inactive since every helpers is defined in scripts/custom_helpers/10_i18n.js
     # - archive
     # - category
     # - tag
@@ -49,6 +49,15 @@ skip_render:
   - css/*
   - third-party/*
   - img/*
+
+# change to make daily archive
+archive_generator:
+  enabled: true
+  per_page: 20
+  yearly: true
+  monthly: true
+  daily: true
+  order_by: -date
 
 # Writing
 new_post_name: :title.md # File name of new posts
