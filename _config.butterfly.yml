@@ -776,8 +776,8 @@ ad:
 # --------------------------------------
 
 site_verification:
-  # - name: google-site-verification
-  #   content: xxxxxx
+  - name: google-site-verification
+    content: LytBIGheQ8y89CkhhUgwfOfBvnNCJd3zeKNB3NNObF0
   # - name: baidu-site-verification
   #   content: xxxxxxx
 
