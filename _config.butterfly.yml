@@ -259,6 +259,10 @@ related_post:
 # 2: The 'next post' will link to new post
 # false: disable pagination
 post_pagination: 2
+# additional config
+pagination:
+  default_cover: none
+  description: true
 
 # Displays outdated notice for a post
 # 메세지는 어짜피 언어에서 다시 세팅하긴 함
@@ -290,7 +294,7 @@ footer:
 
 aside:
   enable: true
-  force_more_button: true  # additional config : Force the more button to display
+  force_more_button: false  # additional config : Force the more button to display
   hide: false
   # Show the button to hide the aside in bottom right button
   button: true
@@ -320,7 +324,7 @@ aside:
   card_recent_post:
     enable: true
     # If set 0 will show all
-    limit: 5
+    limit: 3
     # Sort: date / updated
     sort: date
     sort_order: # Don't modify the setting unless you know how it works
@@ -334,7 +338,7 @@ aside:
   card_categories:
     enable: true
     # If set 0 will show all
-    limit: 0
+    limit: 5
     # Choose: none / true / false
     expand: false
     sort_order: # Don't modify the setting unless you know how it works
@@ -351,9 +355,9 @@ aside:
   card_archives:
     enable: true
     # Type: monthly / yearly
-    type: monthly
+    type: yearly
     # Eg: YYYY年MM月
-    format: MMMM YYYY
+    format: YYYY
     # Sort of order. 1, asc for ascending; -1, desc for descending
     order: -1
     # If set 0 will show all
@@ -554,7 +558,7 @@ comments:
   # Leave it empty if you don't need comments
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # Format of two comments system : Disqus,Waline
-  use: disqus
+  use: Disqus
   # Display the comment name next to the button
   text: true
   # Lazyload: The comment system will be load when comment element enters the browser's viewport.
