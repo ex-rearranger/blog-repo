@@ -166,11 +166,12 @@ i18n: # hexo-generator-i18n settings
   - `layout/includes/mixins/post-ui.pug`
   - `layout/includes/third-party/search/*`
   - `source/js/search/algolia.js`
-  - `source/js/custom/hexo-generator-searchdb-custom/dist/local-search.js`
+  - `source/js/hexo-generator-searchdb-custom/dist/local-search.js`
     - This is the cusomized version of `source/js/search/local-search.js`
-  - `source/js/custom/change_lang.js`
+  - `source/js/change_lang.js`
   - `source/js/utils.js` (change diffDate() to support multilingual)
   - `source/js/main.js` (change all the text that using GLOBAL_CONFIG to support multilingual)
+  - ...
 
 
 ### RESULT : Change the following features to support multilingual

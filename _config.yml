@@ -49,6 +49,8 @@ skip_render:
   - css/*
   - third-party/*
   - img/*
+  - js/*
+  - js/*/*
 
 # change to make daily archive
 archive_generator:
@@ -187,3 +189,29 @@ search:
   field: post
   content: true
   format: html
+
+# RSS
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
+
+# Sitemap
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  template: 
+  template_txt: 
+  rel: false
+  tags: true
+  categories: true

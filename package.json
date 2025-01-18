@@ -6,8 +6,7 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo clean \n hexo server --draft",
-    "build:fontagon": "node ./img_etc/fontagon-generation.js"
+    "server": "hexo clean \n hexo server --draft"
   },
   "hexo": {
     "version": "7.3.0"
@@ -19,9 +18,11 @@
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
+    "hexo-generator-feed": "^3.0.0",
     "hexo-generator-i18n": "^0.0.10",
     "hexo-generator-index": "^4.0.0",
-    "hexo-generator-searchdb": "themes/butterfly/source/js/custom/hexo-generator-searchdb-custom",
+    "hexo-generator-searchdb": "file:source/js/hexo-generator-searchdb-custom",
+    "hexo-generator-sitemap": "file:source/js/hexo-generator-sitemap-custom",
     "hexo-generator-tag": "^2.0.0",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-markdown-it": "^7.1.1",
@@ -31,8 +32,5 @@
     "hexo-wordcount": "^6.0.1",
     "katex": "^0.16.19",
     "lodash": "^4.17.21"
-  },
-  "devDependencies": {
-    "fontagon": "^1.1.1"
   }
 }

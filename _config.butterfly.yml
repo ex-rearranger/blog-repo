@@ -40,7 +40,7 @@ code_blocks:
   theme: light
   macStyle: true
   # Code block height limit (unit: px)
-  height_limit: 270px
+  height_limit: 270
   word_wrap: false
 
   # Toolbar
@@ -112,7 +112,6 @@ cover:
   index_enable: true
   aside_enable: true
   archives_enable: true
-  position: both  # PREVIOUS VERSION: top / bottom / both
   # When cover is not set, the default cover is displayed
   default_cover:
     - /img/galaxy-3219390-2.webp
@@ -386,7 +385,7 @@ aside:
 # --------------------------------------
 
 # the position of bottom right button/default unit: px
-rightside_bottom: 10px
+rightside_bottom: 10
 
 # Conversion between Traditional and Simplified Chinese
 translate:
@@ -1088,6 +1087,7 @@ inject:
     - <link rel="stylesheet" href="/css/layer@0.0.3.css">
     - <link rel="stylesheet" href="/css/print@0.0.1.css">
     - <link rel="stylesheet" href="/css/post@0.0.4.css">
+    - <link rel="stylesheet" href="/css/highlight@0.0.1.css">
     - <link rel="stylesheet" href="/css/fontagon-icons.css">
     - <link rel="stylesheet" as="style" href="/css/pretendard_custom@1.3.9.min.css" />
     - |
@@ -1125,6 +1125,9 @@ CDN:
   custom_format:
 
   option:
+    # ADDITIONAL CONFIG
+    change_lang: js/change_lang.js
+    
     # abcjs_basic_js:
     # activate_power_mode:
     # algolia_js:
@@ -1158,7 +1161,7 @@ CDN:
     # katex:
     # katex_copytex:
     # lazyload:
-    # local_search:
+    local_search: js/hexo-generator-searchdb-custom/dist/local-search.js
     # main:
     # main_css:
     # mathjax:
@@ -1181,126 +1184,3 @@ CDN:
     # valine:
     # waline_css:
     # waline_js:
-
-
-
-
-
-##############################################
-# Footer Background (PREVIOUS VERSION)
-footer_bg: false
-
-# Time difference between publish date and now (PREVIOUS VERSION)
-# Formal: Month/Day/Year Time or Year/Month/Day Time
-runtimeshow:
-  enable: true
-  publish_date: 2024/04/03 17:38
-
-# Aside widget - Newest Comments (PREVIOUS VERSION)
-newest_comments:
-  enable: false
-  sort_order: # Don't modify the setting unless you know how it works
-  limit: 6
-  storage: 10 # unit: mins, save data to localStorage
-  avatar: true
-
-# MathJax (PREVIOUS VERSION)
-mathjax:
-  enable: false
-  per_page: false
-
-# KaTeX (PREVIOUS VERSION)
-katex:
-  enable: true
-  per_page: false
-  hide_scrollbar: true
-
-# Algolia search (PREVIOUS VERSION)
-algolia_search:
-  enable: false
-  hits:
-    per_page: 6
-
-# Local search (PREVIOUS VERSION)
-local_search:
-  enable: true
-  # Preload the search data when the page loads.
-  preload: true
-  # Show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
-  # Unescape html strings to the readable one.
-  unescape: false
-  CDN:
-
-# Docsearch (PREVIOUS VERSION)
-docsearch:
-  enable: false
-  appId:
-  apiKey:
-  indexName:
-  option:
-
-# Share.js (PREVIOUS VERSION)
-# https://github.com/overtrue/share.js
-sharejs:
-  enable: false
-  sites: facebook,twitter,wechat,weibo,qq
-
-# AddToAny (PREVIOUS VERSION)
-# https://www.addtoany.com/
-addtoany:
-  enable: false
-  item: copy_link,email,print
-  # item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
-
-# Chat Button [recommend]
-# It will create a button in the bottom right corner of website, and hide the origin button
-chat_btn: false
-
-# The origin chat button is displayed when scrolling up, and the button is hidden when scrolling down
-chat_hide_show: false
-
-# # chatra
-# # https://chatra.io/
-# chatra:
-#   enable: false
-#   id:
-
-# # tidio
-# # https://www.tidio.com/
-# tidio:
-#   enable: false
-#   public_key:
-
-# # daovoice
-# # http://dashboard.daovoice.io/app
-# daovoice:
-#   enable: false
-#   app_id:
-
-# # crisp
-# # https://crisp.chat/en/
-# crisp:
-#   enable: false
-#   website_id:
-
-# # messenger
-# # https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-plugin/
-# messenger:
-#   enable: false
-#   pageID:
-#   lang: zh_TW # Language en_US/zh_CN/zh_TW and so on
-
-# medium-zoom
-# https://github.com/francoischalifour/medium-zoom
-medium_zoom: false
-
-# fancybox
-# https://fancyapps.com/fancybox/
-fancybox: true
-
-# https://github.com/vinta/pangu.js
-# Insert a space between Chinese character and English character (中英文之間添加空格)
-pangu:
-  enable: false
-  field: site # site/post
