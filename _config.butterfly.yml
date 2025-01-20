@@ -100,7 +100,7 @@ category_img: /img/galaxy-3219390-2.webp
 category_per_img:
 
 # The background image of footer
-footer_img: false
+footer_img: "linear-gradient(-130deg, #f8547b20, #0009dc20)"
 
 # Website Background
 # Can set it to color or image url
@@ -344,7 +344,7 @@ aside:
   card_tags:
     enable: true
     # If set 0 will show all
-    limit: 20
+    limit: 10
     color: false
     # Order of tags, random/name/length
     orderby: random
@@ -413,7 +413,7 @@ darkmode:
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
   # autoChangeMode: false
-  autoChangeMode: 1
+  autoChangeMode: false
   # Set the light mode time. The value is between 0 and 24. If not set, the default value is 6 and 18
   start:
   end:
@@ -451,7 +451,7 @@ copy:
   # Add the copyright information after copied content
   copyright:
     enable: true
-    limit_count: 50
+    limit_count: 100
 
 # wordcount
 # Need to install the hexo-wordcount plugin
@@ -815,7 +815,7 @@ tag_ui: index
 rounded_corners_ui: true
 
 # Stretches the lines so that each line has equal width
-text_align_justify: true
+text_align_justify: false
 
 # Add a mask to the header and footer
 mask:
@@ -1040,7 +1040,7 @@ instantpage: false
 # Lazyload
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: true
+  enable: false
   native: false
   # Specify the field to use lazyload (site or post)
   field: post
@@ -1086,10 +1086,8 @@ inject:
     - <link rel="stylesheet" href="/css/color_sub@0.0.2.css">
     - <link rel="stylesheet" href="/css/layer@0.0.3.css">
     - <link rel="stylesheet" href="/css/print@0.0.1.css">
-    - <link rel="stylesheet" href="/css/post@0.0.4.css">
-    - <link rel="stylesheet" href="/css/highlight@0.0.1.css">
     - <link rel="stylesheet" href="/css/fontagon-icons.css">
-    - <link rel="stylesheet" as="style" href="/css/pretendard_custom@1.3.9.min.css" />
+    - <link rel="stylesheet" href="/css/pretendard_custom@1.3.9.min.css">
     - |
       <!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -1098,6 +1096,11 @@ inject:
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-MFSTS7WS');</script>
       <!-- End Google Tag Manager -->
+  head_post:
+    - <link rel="stylesheet" href="/css/page/post@0.0.4.css">
+    - <link rel="stylesheet" href="/css/page/highlight@0.0.1.css">
+  head_404:
+    - <link rel="stylesheet" href="/css/page/404@0.0.1.css">
   bottom:
     # - <script src="xxxx"></script>
   body_top:
@@ -1149,8 +1152,8 @@ CDN:
     # docsearch_css:
     # docsearch_js:
     egjs_infinitegrid: https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js
-    fancybox: /third-party/fancybox-umd@5.0.36.js
-    fancybox_css: /third-party/fancybox@5.0.36.css
+    # fancybox: 
+    # fancybox_css: 
     # fireworks:
     fontawesome: /third-party/font-awesome-custom@6.5.2.css
     gitalk: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
