@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "postinstall": "patch-package",
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
@@ -14,6 +15,7 @@
   "dependencies": {
     "@kfonts/nanum-myeongjo-yet-hangul": "^0.2.0",
     "@renbaoshuo/markdown-it-katex": "^2.0.2",
+    "cheerio": "^1.0.0",
     "hexo": "^7.3.0",
     "hexo-butterfly-tag-plugins-plus": "^1.0.18",
     "hexo-butterfly-wowjs": "^1.0.5",
@@ -33,6 +35,7 @@
     "hexo-wordcount": "^6.0.1",
     "katex": "^0.16.19",
     "lodash": "^4.17.21",
-    "cheerio": "^1.0.0"
+    "patch-package": "^8.0.0",
+    "punycode": "^2.1.1"
   }
 }
