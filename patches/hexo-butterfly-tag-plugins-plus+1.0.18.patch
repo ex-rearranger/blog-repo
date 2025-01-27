@@ -1,0 +1,13 @@
+diff --git a/node_modules/hexo-butterfly-tag-plugins-plus/index.js b/node_modules/hexo-butterfly-tag-plugins-plus/index.js
+index e12841c..11cc359 100644
+--- a/node_modules/hexo-butterfly-tag-plugins-plus/index.js
++++ b/node_modules/hexo-butterfly-tag-plugins-plus/index.js
+@@ -482,7 +482,7 @@ function bubble (args) {
+   let notation = args[1]
+   let color = args[2] ? args[2] : '#71a4e3'
+ 
+-  return `<span class="bubble-content">${content}</span><span class="bubble-notation"><span class="bubble-item" style="background-color:${color};">${notation}</span></span>`
++  return `<span class="bubble"><span class="bubble-content">${content}</span><span class="bubble-notation"><span class="bubble-item" style="background-color:${color};">${notation}</span></span></span>`
+ }
+ 
+ hexo.extend.tag.register('bubble', bubble, { ends: false })
