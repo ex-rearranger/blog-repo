@@ -7,10 +7,10 @@ cover: false
 sticky: false
 
 categories:
-- []
+- [test]
 - []
 sticky_categories: []
-tags: []
+tags: [test]
 sticky_tags: []
 
 keywords:
