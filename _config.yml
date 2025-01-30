@@ -209,10 +209,10 @@ search:
 # Sitemap
 sitemap:
   path: 
-    # - sitemap.xml
+    - sitemap.xml
     - sitemap.txt
   template: 
   template_txt: 
-  rel: false
-  tags: false
-  categories: false
+  rel: true
+  tags: true
+  categories: true
