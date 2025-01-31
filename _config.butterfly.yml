@@ -718,7 +718,7 @@ baidu_analytics:
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
-google_analytics: G-FSXX9H0C9N
+google_analytics: # G-FSXX9H0C9N
 
 # Cloudflare Analytics
 # https://www.cloudflare.com/zh-tw/web-analytics/
@@ -730,7 +730,7 @@ microsoft_clarity:
 
 # https://umami.is/
 umami_analytics:
-  enable: true
+  enable: false
   # For self-hosted setups, configure the hostname of the Umami instance
   serverURL: 
   website_id: 600e0742-4227-4672-a4e0-893cb7742065
@@ -982,12 +982,12 @@ chartjs:
   # The default settings are only used when the MD syntax is not specified.
   # General font color for the chart
   fontColor:
-    light: 'rgba(0, 0, 0, 0.8)'
-    dark: 'rgba(255, 255, 255, 0.8)'
+    light: '#000000cc'  # 80% opacity
+    dark: '#ffffffcc'   # 80% opacity
   # General border color for the chart
   borderColor:
-    light: 'rgba(0, 0, 0, 0.1)'
-    dark: 'rgba(255, 255, 255, 0.2)'
+    light: '#0000001a'  # 10% opacity
+    dark: '#ffffff33'   # 20% opacity
   # Background color for scale labels on radar and polar area charts
   scale_ticks_backdropColor:
     light: 'transparent'
@@ -1087,7 +1087,8 @@ inject:
     - <link rel="stylesheet" href="/css/layer@0.0.3.css">
     - <link rel="stylesheet" href="/css/print@0.0.1.css">
     - <link rel="stylesheet" href="/css/fontagon-icons.css">
-    - <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    - <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    # - <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
     - |
       <!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

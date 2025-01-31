@@ -1,8 +1,60 @@
 diff --git a/node_modules/hexo-butterfly-tag-plugins-plus/index.js b/node_modules/hexo-butterfly-tag-plugins-plus/index.js
-index e12841c..11cc359 100644
+index e12841c..e20225a 100644
 --- a/node_modules/hexo-butterfly-tag-plugins-plus/index.js
 +++ b/node_modules/hexo-butterfly-tag-plugins-plus/index.js
-@@ -482,7 +482,7 @@ function bubble (args) {
+@@ -10,9 +10,9 @@ hexo.extend.filter.register('after_generate', function (locals) {
+   // 集体声明配置项
+     const data = {
+       issues: config.issues ? config.issues : false,
+-      animaCDN: config.CDN.anima ? urlFor(config.CDN.anima) : 'https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css',
+-      jqueryCDN: config.CDN.jquery ? urlFor(config.CDN.jquery) : 'https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js',
+-      issuesCDN: config.CDN.issues ? urlFor(config.CDN.issues) : 'https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js',
++      animaCDN: config.CDN.anima,
++      jqueryCDN: config.CDN.jquery,
++      issuesCDN: config.CDN.issues,
+       iconfontCDN: config.CDN.iconfont,
+       carouselCDN: config.CDN.carousel,
+       tag_plugins_css: config.CDN.tag_plugins_css ? urlFor(config.CDN.tag_plugins_css) : 'https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css'
+@@ -22,25 +22,24 @@ hexo.extend.filter.register('after_generate', function (locals) {
+   //样式资源
+ 
+   //head引入资源
+-  const css_text = `<link rel="stylesheet" href="${data.animaCDN}" media="defer" onload="this.media='all'"><link rel="stylesheet" href="${data.tag_plugins_css}" media="defer" onload="this.media='all'">`
+-  const carousel_cdn = `<script src="${data.carouselCDN}"></script>`
+-  //bottom引入资源
+-  const js_text = `<script defer src="${data.jqueryCDN}"></script><script defer src="${data.issuesCDN}"></script>`
+-  //iconfont symbol引入
+-  const iconfont_symbol = `<script async src="${data.iconfontCDN}"></script>`
+-  // 注入脚本资源
+-  hexo.extend.injector.register('head_end', css_text, "default");
++  if (data.animaCDN){
++    hexo.extend.injector.register('head_end', `<link rel="stylesheet" href="${data.animaCDN}" media="defer" onload="this.media='all'">`, "default");
++  }
++  if (data.tag_plugins_css){
++    hexo.extend.injector.register('head_end', `<link rel="stylesheet" href="${data.tag_plugins_css}" media="defer" onload="this.media='all'">`, "default");
++  }
+   if (data.carouselCDN){
+-    hexo.extend.injector.register('head_end', carousel_cdn, "default");
++    hexo.extend.injector.register('head_end', `<script src="${data.carouselCDN}"></script>`, "default");
+   }
+ 
+-  // 注入样式资源
+-  if (data.issues){
+-    hexo.extend.injector.register('body_end', js_text, "default");
++  if (data.jqueryCDN){
++    hexo.extend.injector.register('body_end', `<script defer src="${data.jqueryCDN}"></script>`, "default");
++  }
++  if (data.issuesCDN){
++    hexo.extend.injector.register('body_end', `<script defer src="${data.issuesCDN}"></script>`, "default");
+   }
+-
+   if (data.iconfontCDN){
+-    hexo.extend.injector.register('body_end', iconfont_symbol, "default");
++    hexo.extend.injector.register('body_end', `<script async src="${data.iconfontCDN}"></script>`, "default");
+   }
+ 
+ },
+@@ -482,7 +481,7 @@ function bubble (args) {
    let notation = args[1]
    let color = args[2] ? args[2] : '#71a4e3'
  

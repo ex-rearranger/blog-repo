@@ -36,6 +36,12 @@
     "katex": "^0.16.19",
     "lodash": "^4.17.21",
     "patch-package": "^8.0.0",
-    "punycode": "^2.1.1"
+    "punycode": "^2.1.1",
+    "stylus": "^0.56.0"
+  },
+  "overrides": {
+    "hexo-renderer-stylus": {
+      "stylus": "$stylus"
+    }
   }
 }
