@@ -24,8 +24,8 @@ menu:
   Tags: /tags/ || fas fa-tags || url_for_lang
   Categories: /categories/ || fas fa-folder-open || url_for_lang
   Language||fontagon-icons ft-icons ft-icon-language-box:
-    English: /en/ || fontagon-icons ft-icons ft-icon-eng-box || url_for
-    Korean: /ko/ || fontagon-icons ft-icons ft-icon-kor-box || url_for
+    English: /en/ || fontagon-icons ft-icons ft-icon-en-box || url_for
+    Korean: /ko/ || fontagon-icons ft-icons ft-icon-ko-box || url_for
   Others||fas fa-list:
     Archives: /archives/ || fas fa-archive || url_for_lang
     # Random: /random/ || fas fa-random || url_for_lang
@@ -1096,6 +1096,8 @@ inject:
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-MFSTS7WS');</script>
       <!-- End Google Tag Manager -->
+  head_indexPost:
+    - <link rel="stylesheet" href="/css/page/indexPostUI@0.0.1.css">
   head_post:
     - <link rel="stylesheet" href="/css/page/post@0.0.4.css">
     - <link rel="stylesheet" href="/css/page/highlight@0.0.1.css">
