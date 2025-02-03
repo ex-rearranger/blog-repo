@@ -1,0 +1,697 @@
+diff --git a/node_modules/nib/lib/nib/flex.styl b/node_modules/nib/lib/nib/flex.styl
+index 4421da4..a26b452 100644
+--- a/node_modules/nib/lib/nib/flex.styl
++++ b/node_modules/nib/lib/nib/flex.styl
+@@ -1,26 +1,12 @@
+ /*
+  * Vendor "display: flex" support with fallback to obsolete versions.
+  */
+-
+-flex-version ?= box flex
+-
+ //
+ // 1. Display values
+ //    - http://www.w3.org/TR/css3-flexbox/#flex-containers
+ //
+ display(type, args...)
+-  if flex == type || inline-flex == type
+-    if box in flex-version
+-      if flex == type
+-        display: -ms-flexbox args
+-        display: vendor-value(box args, only: moz webkit)
+-      else
+-        display: -ms-inline-flexbox args
+-        display: vendor-value(inline-box args, only: moz webkit)
+-    if flex in flex-version
+-      display: vendor-value(arguments, only: webkit official) // overwrites old webkit
+-  else
+-    display: arguments
++  display: arguments
+ 
+ /*
+  * New syntax for browsers like Google Chrome.
+@@ -31,166 +17,50 @@ display(type, args...)
+ //
+ // 5. Ordering and Orientation
+ //    - http://www.w3.org/TR/css3-flexbox/#ordering-and-orientation
+-//
+--flex-obsolete-direction(direction)
+-  if box in flex-version
+-    if row-reverse == direction || column-reverse == direction
+-      vendor('box-direction', reverse, ignore: ms official)
+-
+-    if row == direction || row-reverse == direction
+-      vendor('box-orient', horizontal, ignore: ms official)
+-    else if column == direction || column-reverse == direction
+-      vendor('box-orient', vertical, ignore: ms official)
+-
+--flex-obsolete-wrap(value)
+-  if box in flex-version
+-    // WARN: wrap-reverse does not have a box equivalent. This will render in different manners
+-    //    on box vs. flex values.
+-    if 'wrap' == value || wrap-reverse == value
+-      vendor('box-lines', multiple, ignore: ms official)
+-    else if nowrap == value
+-      vendor('box-lines', single, ignore: ms official)
+ 
+ flex-direction(direction)
+-  // obsolete
+-  -flex-obsolete-direction(direction)
+-
+-  // new
+-  if flex in flex-version
+-    vendor('flex-direction', arguments, only: webkit ms official)
++  flex-direction: direction
+ 
+ flex-wrap(value)
+-  // obsolete
+-  -flex-obsolete-wrap(value)
+-
+-  if flex in flex-version
+-    vendor('flex-wrap', arguments, only: webkit ms official)
++  flex-wrap: value
+ 
+ flex-flow()
+-  // obsolete
+-  -flex-obsolete-direction(arguments[0])
+-  -flex-obsolete-direction(arguments[1])
+-  -flex-obsolete-wrap(arguments[0])
+-  -flex-obsolete-wrap(arguments[1])
+-
+-  // new
+-  if flex in flex-version
+-    vendor('flex-flow', arguments, only: webkit ms official)
++  vendor('flex-flow', arguments, only: official)
+ 
+ 
+ order()
+-  // obsolete
+-  if box in flex-version
+-    vendor('box-ordinal-group', arguments, ignore: ms official)
+-
+-  // new
+-  if flex in flex-version
+-    vendor('flex-order', arguments, only: ms)
+-    vendor('order', arguments, only: webkit official)
++  vendor('order', arguments, only: official)
+ 
+ 
+ //
+ // 7. Flexibility
+ //    - http://www.w3.org/TR/css3-flexbox/#flexibility
+ //
+-flex-grow(growth)
+-  // obsolete
+-  if box in flex-version
+-    vendor('box-flex', growth)
+-
+-  // new
+-  if flex in flex-version
+-    vendor('flex-grow', arguments, only: webkit official)
++flex-grow()
++  vendor('flex-grow', arguments, only: official)
+ 
+ flex-basis()
+-  if flex in flex-version
+-    vendor('flex-basis', arguments, only: webkit official)
++  vendor('flex-basis', arguments, only: official)
+ 
+ flex-shrink()
+-  if flex in flex-version
+-    vendor('flex-shrink', arguments, only: webkit official)
+-
+-flex(growth)
+-
+-  // obsolete
+-  if box in flex-version
+-    shrink = 1
+-
+-    if none == growth || initial == growth
+-      // Well known values
+-      shrink = 0 if none == growth
+-      growth = 0
+-    else if is-width(growth) == true
+-      // Basis is defined as the first parameter
+-      growth = arguments[1] || 0
+-      shrink = arguments[2] if 3 <= length(arguments)
+-    else if arguments[1] && is-width(arguments[1]) == false
+-      // Growth is first and shrink is second
+-      shrink = arguments[1]
+-
+-    // Since we can't make the distinction between growing and shrinking in the box model, take
+-    // the one that provides the most flexibility.
+-    vendor('box-flex', max(growth, shrink), ignore: ms)
+-
+-  // new
+-  if flex in flex-version
+-    vendor('flex', arguments, only: webkit ms official)
+-
+-
+-// converts the justification alignment
+--convert-justify(align)
+-  if flex-start == align
+-    return start
+-  else if flex-end == align
+-    return end
+-  else if space-around == align
+-    return distribute
+-  else if space-between == align
+-    return justify
+-  else
+-    return align
++  vendor('flex-shrink', arguments, only: official)
++
++flex()
++  vendor('flex', arguments, only: official)
++
+ 
+ //
+ // 8. Alignment
+ //    - http://www.w3.org/TR/css3-flexbox/#alignment
+ //
+ justify-content(align)
+-  // obsolete
+-  if box in flex-version
+-    vendor('box-pack', -convert-justify(align), ignore: ms official)
+-
+-  // new
+-  if flex in flex-version
+-    vendor('flex-pack', -convert-justify(align), only: ms)
+-    vendor('justify-content', align, only: webkit official)
++  vendor('justify-content', align, only: official)
+ 
+ align-content(align)
+-  // WARN: Obsolete spec does not allow for adjustment here
+-  if flex in flex-version
+-    vendor('flex-line-pack', -convert-justify(align), only: ms)
+-    vendor('align-content', align, only: webkit official)
+-
+-// converts alignment from 'flex' to normal value
+--convert-alignment(align)
+-  if flex-start == align
+-    return start
+-  else if flex-end == align
+-    return end
+-  else
+-    return align
++  vendor('align-content', align, only: official)
+ 
+ align-items(align)
+-  // obsolete
+-  if box in flex-version
+-    vendor('box-align', -convert-alignment(align), ignore: ms official)
+-
+-  // new
+-  if flex in flex-version
+-    vendor('flex-align', -convert-alignment(align), only: ms)
+-    vendor('align-items', arguments, only: webkit official)
++  vendor('align-items', align, only: official)
+ 
+ align-self(align)
+-  // WARN: Obsolete spec does not allow for overriding alignment on individual items.
+-  if flex in flex-version
+-    vendor('align-self', align, only: webkit official)
+-    vendor('flex-item-align', -convert-alignment(align), only: ms)
++  vendor('align-self', align, only: official)
+diff --git a/node_modules/nib/lib/nib/normalize/base.styl b/node_modules/nib/lib/nib/normalize/base.styl
+index d026eb9..9b6f7f8 100644
+--- a/node_modules/nib/lib/nib/normalize/base.styl
++++ b/node_modules/nib/lib/nib/normalize/base.styl
+@@ -2,7 +2,6 @@
+ normalize-base()
+   html // Prevent iOS text size adjust after orientation change.
+     font-family sans-serif
+-    -ms-text-size-adjust 100%
+-    -webkit-text-size-adjust 100%
++    text-size-adjust 100%
+   body
+     margin 0
+diff --git a/node_modules/nib/lib/nib/normalize/forms.styl b/node_modules/nib/lib/nib/normalize/forms.styl
+index 7c080e6..4c17483 100644
+--- a/node_modules/nib/lib/nib/normalize/forms.styl
++++ b/node_modules/nib/lib/nib/normalize/forms.styl
+@@ -17,7 +17,7 @@ normalize-forms()
+   // iOS and improve usability and consistency of cursor style.
+   button, html input[type='button'], input[type='reset'], input[type='submit']
+     cursor pointer
+-    -webkit-appearance button
++    appearance button
+ 
+   // Reset default cursor for disabled elements.
+   button[disabled], html input[disabled]
+@@ -36,22 +36,10 @@ normalize-forms()
+     box-sizing border-box
+     padding    0
+ 
+-  // Fix the cursor style for Chrome's increment/decrement buttons.
+-  input[type='number']::-webkit-inner-spin-button,
+-  input[type='number']::-webkit-outer-spin-button
+-    height auto
+-
+   // Consistent appearance and box-sizing in Safari and Chrome.
+   input[type='search']
+-    -webkit-appearance  textfield
+-    -moz-box-sizing     content-box
+-    -webkit-box-sizing  content-box
+-    box-sizing          content-box
+-
+-  // No inner padding and search cancel button in Safari and Chrome on OS X.
+-  input[type='search']::-webkit-search-cancel-button,
+-  input[type='search']::-webkit-search-decoration
+-    -webkit-appearance none
++    appearance  textfield
++    box-sizingbox-sizing  content-box
+ 
+   fieldset // Consistent border, margin, and padding.
+     border  1px solid #c0c0c0
+diff --git a/node_modules/nib/lib/nib/normalize/groups.styl b/node_modules/nib/lib/nib/normalize/groups.styl
+index d9c0996..7953ca7 100644
+--- a/node_modules/nib/lib/nib/normalize/groups.styl
++++ b/node_modules/nib/lib/nib/normalize/groups.styl
+@@ -4,7 +4,6 @@ normalize-groups()
+     margin 1em 40px
+ 
+   hr // Consistency between FF and others.
+-    -moz-box-sizing content-box
+     box-sizing      content-box
+     height          0
+ 
+diff --git a/node_modules/nib/lib/nib/vendor.styl b/node_modules/nib/lib/nib/vendor.styl
+index 8d42145..a7381c0 100644
+--- a/node_modules/nib/lib/nib/vendor.styl
++++ b/node_modules/nib/lib/nib/vendor.styl
+@@ -58,106 +58,90 @@ vendor-value(arg, only = null, ignore = null)
+  */
+ 
+ box-shadow()
+-  vendor('box-shadow', arguments, only: webkit official)
++  vendor('box-shadow', arguments, only: official)
+ 
+ /*
+  * Vendor "user-select" support.
+  */
+ 
+ user-select()
+-  vendor('user-select', arguments, only: webkit moz ms official)
++  vendor('user-select', arguments, only: official)
+ 
+ /*
+  * Vendor "column-count" support.
+  */
+ 
+ column-count()
+-  vendor('column-count', arguments, only: webkit moz official)
++  vendor('column-count', arguments, only: official)
+ 
+ /*
+  * Vendor "column-gap" support.
+  */
+ 
+ column-gap()
+-  vendor('column-gap', arguments, only: webkit moz official)
++  vendor('column-gap', arguments, only: official)
+ 
+ /*
+  * Vendor "column-rule" support.
+  */
+ 
+ column-rule()
+-  vendor('column-rule', arguments, only: webkit moz official)
++  vendor('column-rule', arguments, only: official)
+ 
+ /*
+  * Vendor "column-rule-color" support.
+  */
+ 
+ column-rule-color()
+-  vendor('column-rule-color', arguments, only: webkit moz official)
++  vendor('column-rule-color', arguments, only: official)
+ 
+ /*
+  * Vendor "column-rule-width" support.
+  */
+ 
+ column-rule-width()
+-  vendor('column-rule-width', arguments, only: webkit moz official)
++  vendor('column-rule-width', arguments, only: official)
+ 
+ /*
+  * Vendor "column-rule-style" support.
+  */
+ 
+ column-rule-style()
+-  vendor('column-rule-style', arguments, only: webkit moz official)
++  vendor('column-rule-style', arguments, only: official)
+ 
+ /*
+  * Vendor "column-width" support.
+  */
+ 
+ column-width()
+-  vendor('column-width', arguments, only: webkit moz official)
++  vendor('column-width', arguments, only: official)
+ 
+ /*
+  * Vendor "column-span" support.
+  */
+ 
+ column-span()
+-  vendor('column-span', arguments, only: webkit official)
++  vendor('column-span', arguments, only: official)
+ 
+ /*
+  * Vendor "column-fill" support.
+  */
+ 
+ column-fill()
+-  vendor('column-fill', arguments, only: moz official)
++  vendor('column-fill', arguments, only: official)
+ 
+ /*
+  * Legacy syntax support for background-clip and background-origin
+  */
+ 
+-legacy-bg-values(property, args)
+-  legacy_args = ()
+-  importance = unquote('')
+-  for subargs in args
+-    for arg in subargs
+-      if arg in (border-box padding-box content-box)
+-        arg = unquote('border')  if arg == border-box
+-        arg = unquote('padding') if arg == padding-box
+-        arg = unquote('content') if arg == content-box
+-      if arg != '!important'
+-        push(legacy_args,arg)
+-      else
+-        importance = !important
+-  vendor(property, unquote(join(', ',legacy_args)) importance, only: moz webkit)
+-
+ /*
+  * Vendor "background-clip" support.
+  */
+ 
+ background-clip()
+   if arguments[0] == text
+-    vendor('background-clip', arguments, only: webkit)
++    vendor('background-clip', arguments, only: official)
+   else
+-    legacy-bg-values('background-clip', arguments)
+     background-clip: arguments
+ 
+ /*
+@@ -165,7 +149,6 @@ background-clip()
+  */
+ 
+ background-origin()
+-  legacy-bg-values('background-origin', arguments)
+   background-origin: arguments
+ 
+ /*
+@@ -173,69 +156,69 @@ background-origin()
+  */
+ 
+ transform()
+-  vendor('transform', arguments)
++  vendor('transform', arguments, only: official)
+ 
+ /*
+  * Vendor "transform-origin" support.
+  */
+ transform-origin()
+-    vendor('transform-origin', arguments)
++    vendor('transform-origin', arguments, only: official)
+ 
+ /*
+  * Vendor "transform-style" support.
+  */
+ 
+ transform-style()
+-  vendor('transform-style', arguments)
++  vendor('transform-style', arguments, only: official)
+ 
+ /*
+  * Vendor "border-image" support.
+  */
+ 
+ border-image()
+-  vendor('border-image', arguments, only: webkit moz o official)
++  vendor('border-image', arguments, only: official)
+ 
+ /*
+  * Vendor "transition" support.
+  */
+ 
+ transition()
+-  vendor('transition', arguments)
++  vendor('transition', arguments, only: official)
+ 
+ /*
+  * Vendor "transition-property" support.
+  */
+ 
+ transition-property()
+-  vendor('transition-property', arguments)
++  vendor('transition-property', arguments, only: official)
+ 
+ /*
+  * Vendor "transition-duration" support.
+  */
+ 
+ transition-duration()
+-  vendor('transition-duration', arguments)
++  vendor('transition-duration', arguments, only: official)
+ 
+ /*
+  * Vendor "transition-timing-function" support.
+  */
+ 
+ transition-timing-function()
+-  vendor('transition-timing-function', arguments)
++  vendor('transition-timing-function', arguments, only: official)
+ 
+ /*
+  * Vendor "transition-delay" support.
+  */
+ 
+ transition-delay()
+-  vendor('transition-delay', arguments)
++  vendor('transition-delay', arguments, only: official)
+ 
+ /*
+  * Vendor "backface-visibility" support.
+  */
+ 
+ backface-visibility()
+-  vendor('backface-visibility', arguments, only: webkit moz ms official)
++  vendor('backface-visibility', arguments, only: official)
+ 
+ /*
+  * Vendor "perspective" support.
+@@ -243,7 +226,7 @@ backface-visibility()
+ 
+ perspective()
+   if mixin
+-    vendor('perspective', arguments, only: webkit moz ms official)
++    vendor('perspective', arguments, only: official)
+   else
+     'perspective(%s)' % arguments
+ 
+@@ -252,7 +235,7 @@ perspective()
+  */
+ 
+ perspective-origin()
+-  vendor('perspective-origin', arguments, only: webkit moz ms official)
++  vendor('perspective-origin', arguments, only: official)
+ 
+ /*
+  * Opacity with conditional IE support.
+@@ -260,18 +243,6 @@ perspective-origin()
+ 
+ opacity(n, args...)
+   opacity: n args
+-  if support-for-ie
+-    if n == inherit or n == initial
+-      -ms-filter: n args
+-      filter: n args
+-    else
+-      val = round(n * 100)
+-      if val == 100
+-        -ms-filter: none args
+-        filter: none args
+-      else
+-        -ms-filter: '"progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)"' % val args
+-        filter: 'alpha(opacity=%s)' % val args
+ 
+ /*
+  * Vendor "text-size-adjust"
+@@ -292,57 +263,14 @@ whitespace()
+  */
+ 
+ box-sizing()
+-  vendor('box-sizing', arguments, only: webkit moz official)
+-
+-/*
+- * Vendor "box-orient" support.
+- */
+-
+-box-orient()
+-  vendor('box-orient', arguments, only: webkit moz official)
+-
+-/*
+- * Vendor "box-flex-group" support.
+- */
+-
+-box-flex-group()
+-  vendor('box-flex-group', arguments, only: webkit moz official)
+-
+-/*
+- * Vendor "box-ordinal-group" support.
+- */
+-
+-box-ordinal-group()
+-  vendor('box-ordinal-group', arguments, only: webkit moz ms official)
+-
+-
+-/*
+- * Vendor "box-align" support.
+- */
+-
+-box-align()
+-  vendor('box-align', arguments, only: webkit moz ms official)
+-
+-/*
+- * Vendor "box-pack" support.
+- */
+-
+-box-pack()
+-  vendor('box-pack', arguments, only: webkit moz ms official)
+-
+-/*
+- * Vendor "box-direction" support.
+- */
+-
+-box-direction()
+-  vendor('box-direction', arguments, only: webkit moz ms official)
++  vendor('box-sizing', arguments, only: official)
+ 
+ /*
+  * Vendor "animation" support.
+  */
+ 
+ animation()
+-  vendor('animation', arguments)
++  vendor('animation', arguments, only: official)
+ 
+ 
+ /*
+@@ -350,97 +278,90 @@ animation()
+  */
+ 
+ animation-name()
+-  vendor('animation-name', arguments)
++  vendor('animation-name', arguments, only: official)
+ 
+ /*
+  * Vendor "animation-duration" support.
+  */
+ 
+ animation-duration()
+-  vendor('animation-duration', arguments)
++  vendor('animation-duration', arguments, only: official)
+ 
+ /*
+  * Vendor "animation-delay" support.
+  */
+ 
+ animation-delay()
+-  vendor('animation-delay', arguments)
++  vendor('animation-delay', arguments, only: official)
+ 
+ /*
+  * Vendor "animation-direction" support.
+  */
+ 
+ animation-direction()
+-  vendor('animation-direction', arguments)
++  vendor('animation-direction', arguments, only: official)
+ 
+ /*
+  * Vendor "animation-iteration-count" support.
+  */
+ 
+ animation-iteration-count()
+-  vendor('animation-iteration-count', arguments)
++  vendor('animation-iteration-count', arguments, only: official)
+ 
+ /*
+  * Vendor "animation-timing-function" support.
+  */
+ 
+ animation-timing-function()
+-  vendor('animation-timing-function', arguments)
++  vendor('animation-timing-function', arguments, only: official)
+ 
+ /*
+  * Vendor "animation-play-state" support.
+  */
+ 
+ animation-play-state()
+-  vendor('animation-play-state', arguments)
++  vendor('animation-play-state', arguments, only: official)
+ 
+ /*
+  * Vendor "animation-fill-mode" support.
+  */
+ 
+ animation-fill-mode()
+-  vendor('animation-fill-mode', arguments)
++  vendor('animation-fill-mode', arguments, only: official)
+ 
+ /*
+  * Vendor "hyphens" support.
+  */
+ 
+ hyphens()
+-  vendor('hyphens', arguments, only: webkit moz ms official)
++  vendor('hyphens', arguments, only: official)
+ 
+ /*
+  * Vendor "appearance" support.
+  */
+ 
+ appearance()
+-  vendor('appearance', arguments, only: webkit moz official)
++  vendor('appearance', arguments, only: official)
+ 
+ /*
+  * Vendor "tab-size" support.
+  */
+ 
+ tab-size()
+-  vendor('tab-size', arguments, only: moz o official)
+-
+-/*
+- * Vendor "overflow-scrolling" support.
+- */
+-
+-overflow-scrolling()
+-  vendor('overflow-scrolling', arguments, only: webkit official)
++  vendor('tab-size', arguments, only: official)
+ 
+ /*
+  * Vendor "text-overflow" support, , -o- for opera 9.* - 10.*
+  */
+ 
+ text-overflow()
+-  vendor('text-overflow', arguments, only: official o)
++  vendor('text-overflow', arguments, only: official)
+ 
+ /*
+  * Vendor "text-size-adjust" support.
+  */
+ text-size-adjust()
+-  vendor('text-size-adjust', arguments, only: official webkit ms)
++  vendor('text-size-adjust', arguments, only: official)
+ 
+ /*
+  * Vendor "font-smoothing" support, webkit only.
