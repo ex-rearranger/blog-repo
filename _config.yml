@@ -125,7 +125,8 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
+include: 
+  - .nojekyll
 exclude:
 ignore:
 
@@ -140,6 +141,7 @@ deploy:
   type: git
   repo: git@github.com:ex-rearranger/ex-rearranger.github.io.git
   branch: main
+  ignore_hidden: false  # for .nojekyll
 
 
 markdown:
