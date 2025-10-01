@@ -63,7 +63,7 @@ archive_generator:
   order_by: -date
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: draft
 titlecase: false # Transform title into titlecase
 external_link:
@@ -218,3 +218,13 @@ sitemap:
   rel: true
   tags: true
   categories: true
+
+# Security
+encrypt: # hexo-blog-encrypt
+  abstract: Here's something encrypted, password is required to continue reading.
+  message: 📔🔒🔎🙅🤫🫶🏻
+  tags:
+  - {name: encryptAsDiary, password: passwordA}
+  - {name: encryptAsTips, password: cryptip}
+  wrong_pass_message: This is an invalid password. Check and try again, please.
+  wrong_hash_message: These decrypted content cannot be verified, but you can still have a look.
