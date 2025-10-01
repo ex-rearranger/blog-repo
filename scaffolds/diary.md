@@ -1,5 +1,6 @@
 ---
 title: {{ date }}
+lang: ko
 date: {{ date }}
 updated:
 top_img: /img/galaxy-3219390-2.webp
