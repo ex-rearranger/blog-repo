@@ -1,5 +1,5 @@
 diff --git a/node_modules/hexo-butterfly-tag-plugins-plus/index.js b/node_modules/hexo-butterfly-tag-plugins-plus/index.js
-index e12841c..e20225a 100644
+index e12841c..4427ca5 100644
 --- a/node_modules/hexo-butterfly-tag-plugins-plus/index.js
 +++ b/node_modules/hexo-butterfly-tag-plugins-plus/index.js
 @@ -10,9 +10,9 @@ hexo.extend.filter.register('after_generate', function (locals) {
@@ -54,7 +54,40 @@ index e12841c..e20225a 100644
    }
  
  },
-@@ -482,7 +481,7 @@ function bubble (args) {
+@@ -256,7 +255,7 @@ hexo.extend.tag.register('icon',iconFont);
+ // {% image url, height=32px %}
+ // {% image url, bg=#eee %}
+ // {% image url, alt=haha, width=400px %}
+-// {% image url, alt=haha, width=400px, bg=#eee %}
++// {% image url, alt=haha, width=400px, bg=#eee, style="margin:0" %}
+ hexo.extend.tag.register('image', function(args) {
+   args = args.join(' ').split(', ');
+   let url = args[0].trim();
+@@ -274,6 +273,8 @@ hexo.extend.tag.register('image', function(args) {
+         style += 'height:' + tmp.substring(7, tmp.length) + ';';
+       } else if (tmp.includes('bg=')) {
+         bg = tmp.substring(3, tmp.length);
++      } else if (tmp.includes('style=')) {
++        style += tmp.substring(6, tmp.length) + ';';
+       }
+     }
+   }
+@@ -281,7 +282,13 @@ hexo.extend.tag.register('image', function(args) {
+     let img = '';
+     img += '<img class="img" src="' + url + '"';
+     if (alt.length > 0) {
+-      img += ' alt="' + alt + '"';
++      if (alt.includes("</span>")) {
++        let alt_tmp = alt.replace(/<span[^>]+>/g, "").replace(/<\/span>/g, "<br>");
++        img += ' alt="' + alt_tmp + '"';
++        console.log(alt_tmp)
++      } else {
++        img += ' alt="' + alt + '"';
++      }
+     }
+     if (style.length > 0) {
+       img += ' style="' + style + '"';
+@@ -482,7 +489,7 @@ function bubble (args) {
    let notation = args[1]
    let color = args[2] ? args[2] : '#71a4e3'
  
@@ -63,3 +96,31 @@ index e12841c..e20225a 100644
  }
  
  hexo.extend.tag.register('bubble', bubble, { ends: false })
+diff --git a/node_modules/hexo-butterfly-tag-plugins-plus/lib/scripts/image.js b/node_modules/hexo-butterfly-tag-plugins-plus/lib/scripts/image.js
+index 46cb4cd..f37ca22 100644
+--- a/node_modules/hexo-butterfly-tag-plugins-plus/lib/scripts/image.js
++++ b/node_modules/hexo-butterfly-tag-plugins-plus/lib/scripts/image.js
+@@ -28,6 +28,8 @@ hexo.extend.tag.register('image', function(args) {
+         style += 'height:' + tmp.substring(7, tmp.length) + ';';
+       } else if (tmp.includes('bg=')) {
+         bg = tmp.substring(3, tmp.length);
++      } else if (tmp.includes('style=')) {
++        style += tmp.substring(6, tmp.length) + ';';
+       }
+     }
+   }
+@@ -35,7 +37,13 @@ hexo.extend.tag.register('image', function(args) {
+     let img = '';
+     img += '<img class="img" src="' + url + '"';
+     if (alt.length > 0) {
+-      img += ' alt="' + alt + '"';
++      if (alt.includes("</span>")) {
++        let alt_tmp = alt.replace(/<span[^>]+>/g, "").replace(/<\/span>/g, "<br>");
++        img += ' alt="' + alt_tmp + '"';
++        console.log(alt_tmp)
++      } else {
++        img += ' alt="' + alt + '"';
++      }
+     }
+     if (style.length > 0) {
+       img += ' style="' + style + '"';
