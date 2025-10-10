@@ -379,6 +379,8 @@ aside:
     # Formal: Month/Day/Year Time or Year/Month/Day Time
     # Leave it empty if you don't enable this feature
     runtime_date: 2024/04/03 17:38
+  card_pomodoro:
+    enable: true
 
 # --------------------------------------
 # Bottom right button
@@ -428,8 +430,8 @@ rightside_item_order:
   enable: true
   # Default: readmode,translate,darkmode,hideAside
   hide: langmode,darkmode,readmode
-  # Default: toc,chat,comment
-  show: hideAside,toc
+  # Default: toc,chat,comment,pomodoro
+  show: hideAside,pomodoro,toc
 
 # --------------------------------------
 # Global Settings
