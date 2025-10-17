@@ -337,7 +337,7 @@ aside:
   card_categories:
     enable: true
     # If set 0 will show all
-    limit: 5
+    limit: 0
     # Choose: none / true / false
     expand: false
     sort_order: # Don't modify the setting unless you know how it works
