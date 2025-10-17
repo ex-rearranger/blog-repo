@@ -1,6 +1,7 @@
 ---
 title: {{ date }}
 lang: ko
+language: ko
 date: {{ date }}
 updated:
 top_img: /img/galaxy-3219390-2.webp
@@ -15,7 +16,8 @@ tags: []
 sticky_tags: []
 
 keywords:
-description:
+description: >-
+  personal use
 password: {{ title }}
 
 inject_head:
