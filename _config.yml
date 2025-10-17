@@ -221,6 +221,7 @@ sitemap:
 
 # Security
 encrypt: # hexo-blog-encrypt
+  theme: xray
   abstract: Here's something encrypted, password is required to continue reading.
   message: 📔🔒🔎🙅🤫🫶🏻
   tags:
