@@ -5,6 +5,8 @@ updated: {{ date }}
 top_img: false
 cover: false
 sticky: false
+lang: {{ lang }}
+language: {{ lang }}
 
 categories:
 - [test]

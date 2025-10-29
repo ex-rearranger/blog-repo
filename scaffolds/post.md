@@ -5,6 +5,8 @@ updated:
 top_img: /img/galaxy-3219390-2.webp
 cover: /img/galaxy-3219390-2.webp
 sticky: false
+lang: {{ lang }}
+language: {{ lang }}
 
 categories:
 - []

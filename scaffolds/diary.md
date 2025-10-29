@@ -1,8 +1,9 @@
 ---
-title: {{ date }}
-lang: ko
-language: ko
+title: {{ title }} 일기
 date: {{ date }}
+password: {{ title }}
+lang: {{ lang }}
+language: {{ lang }}
 updated:
 top_img: /img/galaxy-3219390-2.webp
 cover: /img/galaxy-3219390-2.webp
@@ -19,7 +20,6 @@ sticky_tags: []
 keywords:
 description: >-
   personal use
-password: {{ title }}
 
 inject_head:
   # 검색 엔진에 추가 안 되게
