@@ -16,6 +16,7 @@ nav:
   # Navigation bar logo image
   logo: /img/avatar-extreme-rearranger.webp
   display_title: true
+  display_post_title: false
   # Whether to fix navigation bar
   fixed: false
 
@@ -174,7 +175,7 @@ subtitle:
   # Choose: false/1/2/3
   # false - disable the function
   # 1 - hitokoto.cn
-  # 2 - yijuzhan.com
+  # 2 - https://api.aa1.cn/doc/yiyan.html
   # 3 - jinrishici.com
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
@@ -188,7 +189,7 @@ subtitle:
 # 5: Info displayed on the cover
 # 6: Masonry layout - Cover on top, info on the bottom
 # 7: Masonry layout - Info displayed on the cover
-index_layout: 3
+index_layout: 2
 
 # Display the article introduction on homepage
 # 1: description
@@ -285,7 +286,9 @@ footer:
     since: 2022
   custom_text:
   # Copyright of theme and framework
-  copyright: true 
+  copyright:
+    enable: true
+    version: true
 
 # --------------------------------------
 # Aside Settings
@@ -433,6 +436,9 @@ rightside_item_order:
   # Default: toc,chat,comment,pomodoro
   show: hideAside,pomodoro,toc
 
+# Animation for the bottom right config button
+rightside_config_animation: true
+
 # --------------------------------------
 # Global Settings
 # --------------------------------------
@@ -521,6 +527,11 @@ search:
     top_n_per_article: 1
     # Unescape html strings to the readable one.
     unescape: false
+    # Enable pagination for search results
+    pagination:
+      enable: true
+      # Number of search results per page
+      hitsPerPage: 5
     CDN:
 
   # Docsearch
@@ -540,15 +551,16 @@ share:
   # Leave it empty if you don't need share
   use: 
 
-  # Share.js
-  # https://github.com/overtrue/share.js
-  sharejs:
-    sites: facebook,twitter,wechat,weibo,qq
+# Share.js
+# https://github.com/overtrue/share.js
+sharejs:
+  enable: false
+  sites: facebook,twitter,wechat,weibo,qq
 
   # AddToAny
   # https://www.addtoany.com/
   addtoany:
-    item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
+    item: facebook,x,wechat,sina_weibo,facebook_messenger,email,copy_link
 
 # --------------------------------------
 # Comments System
@@ -734,7 +746,8 @@ microsoft_clarity:
 umami_analytics:
   enable: false
   # For self-hosted setups, configure the hostname of the Umami instance
-  serverURL: 
+  serverURL:
+  script_name: script.js
   website_id: 600e0742-4227-4672-a4e0-893cb7742065
   option:
   UV_PV:
@@ -743,6 +756,12 @@ umami_analytics:
     page_pv: false
     # Umami Cloud (API key) / self-hosted Umami (token)
     token: XBC4GiXHFs1T4tLZ0R6mmTczMGQob9wp
+
+# https://www.googletagmanager.com/
+google_tag_manager:
+  tag_id:
+  # optional
+  domain:
 
 # --------------------------------------
 # Advertisement
@@ -814,7 +833,7 @@ category_ui: index
 tag_ui: index
 
 # Rounded corners for UI elements
-rounded_corners_ui: true
+rounded_corners_ui: false
 
 # Stretches the lines so that each line has equal width
 text_align_justify: false
@@ -854,10 +873,10 @@ beautify:
 # Global font settings
 # Don't modify the following settings unless you know how they work
 font:
-  global-font-size: 16px
-  code-font-size:
-  font-family: '"Pretendard Variable", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif'
-  code-font-family:
+  global_font_size: 16px
+  code_font_size:
+  font_family: '"Pretendard Variable", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif'
+  code_font_family:
 
 # Font settings for the site title and site subtitle
 blog_title_font:
@@ -1043,6 +1062,7 @@ instantpage: false
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
   enable: false
+  # Use browser's native lazyload instead of vanilla-lazyload
   native: false
   # Specify the field to use lazyload (site or post)
   field: post
@@ -1075,7 +1095,11 @@ Open_Graph_meta:
 
 # Structured Data
 # https://developers.google.com/search/docs/guides/intro-structured-data
-structured_data: true
+structured_data:
+  enable: true
+  # Alternate name for the site, used in structured data
+  # Format: ['name1', 'name2']
+  alternate_name:
 
 # Add the vendor prefixes to ensure compatibility
 css_prefix: true
@@ -1157,7 +1181,7 @@ CDN:
     # docsearch_css:
     # docsearch_js:
     egjs_infinitegrid: https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js
-    # fancybox: 
+    fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js
     fancybox_css: /third-party/fancybox@5.0.36.css
     # fireworks:
     fontawesome: /third-party/font-awesome-custom@6.7.2.css
@@ -1165,7 +1189,6 @@ CDN:
     gitalk_css: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
     # giscus:
     # instantpage:
-    # instantsearch:
     # katex:
     # katex_copytex:
     # lazyload:
